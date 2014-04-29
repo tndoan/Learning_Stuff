@@ -35,7 +35,7 @@ def dbscan(points, eps, minPts=4):
     clusterId = 1 # cluster id = 0 is for noise only
     for i in range(len(points)):
         point = points[i]
-        if point.cluster == None: # if the point is not assigned to any cluster
+        if point.cluster == -1: # if the point is not assigned to any cluster
             if expandCluster(points, i, clusterId, eps, minPts):
                 clusterId += 1
 
