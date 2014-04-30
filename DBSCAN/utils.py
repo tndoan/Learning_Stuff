@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from Point import Point 
 import math
 
-def visulaize(points):
+def visualize(points):
     """points: list of point
     draw the list of points"""
     list_x = list()
