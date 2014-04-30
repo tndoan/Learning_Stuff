@@ -58,7 +58,14 @@ def expandCluster(points, p, clusterId, eps, minPts):
         points[p].cluster = 0
         return False
     else:
-        # TODO: continue filling in the void here
         while len(seeds) > 0:
-            print "abc"
+            cPoint = seeds.pop()
+            result = getNeighbor(points, cPoint, eps)
+            if len(result) >= minPts:
+                for i in range(len(result)):
+                    rPoint = result[i]
+                    if rPoint.cluster == -1 or rPoint.cluster == 0:
+                        if rPoint.cluster == -1:
+                            seeds.append(rPoint)
+                        rPoint.cluster = clusterId
         return True
