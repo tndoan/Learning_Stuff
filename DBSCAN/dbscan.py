@@ -37,10 +37,12 @@ def dbscan(points, eps, minPts=4):
         point = points[i]
         if point.cluster == -1: # if the point is not assigned to any cluster
             if expandCluster(points, i, clusterId, eps, minPts):
+                print clusterId
                 clusterId += 1
+    return clusterId
 
 def getNeighbor(points, p, eps):
-    """return list of neighbor within eps distance of point in points set"""
+    """return list of index of neighbors within eps distance of point whose index is p in points set"""
     result = list()
     point = points[p]
     for i in range(len(points)):
@@ -48,7 +50,7 @@ def getNeighbor(points, p, eps):
             cPoint = points[i] # current considerred point
             dist = utils.distance(point, cPoint)
             if dist < eps:
-                result.append(cPoint)
+                result.append(i)
     return result
 
 def expandCluster(points, p, clusterId, eps, minPts):
@@ -59,13 +61,14 @@ def expandCluster(points, p, clusterId, eps, minPts):
         return False
     else:
         while len(seeds) > 0:
-            cPoint = seeds.pop()
-            result = getNeighbor(points, cPoint, eps)
+            index = seeds.pop()
+            result = getNeighbor(points, index, eps)
             if len(result) >= minPts:
                 for i in range(len(result)):
                     rPoint = result[i]
-                    if rPoint.cluster == -1 or rPoint.cluster == 0:
-                        if rPoint.cluster == -1:
+                    point = points[rPoint]
+                    if point.cluster == -1 or point.cluster == 0:
+                        if point.cluster == -1:
                             seeds.append(rPoint)
-                        rPoint.cluster = clusterId
+                        point.cluster = clusterId
         return True

@@ -2,15 +2,16 @@ import matplotlib.pyplot as plt
 from Point import Point 
 import math
 
+colors = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
+
 def visualize(points):
     """points: list of point
-    draw the list of points"""
-    list_x = list()
-    list_y = list()
+    draw the list of points
+    numOfCluster is the total number of cluster that the dataset has
+    cluster = 0 means noise
+    1..(numOfCluster - 1) is the number of cluster returned by DBSCAN"""
     for point in points:
-        list_x.append(point.x)
-        list_y.append(point.y)
-    plt.plot(list_x, list_y, 'o') #TODO need to improve the visualization
+        plt.plot(point.x, point.y, colors[point.cluster] + 'o')
     plt.show()
 
 def read_input(filename):
