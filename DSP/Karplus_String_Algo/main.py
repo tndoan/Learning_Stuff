@@ -17,3 +17,22 @@ def ks_loop(x, alpha, D):
         y[i] = float(alpha * y[i - M]) # so y[n] = alpha y[n - M]
 
     return y
+
+def ks(x, alpha, D):
+    """The implementation of Karplus-Strong algorithm 
+    using matrix operator"""
+
+    M = np.size(x)
+
+    a = np.ones((1, D)) * alpha
+    b = np.arange(D)
+    alphaVector = pow(a, b)
+
+    alphaMatrix = np.eye(D, M)
+    for i in range(M):
+        alphaMatrix[:, i] = alphaVector
+
+    xMatrix = np.tile(x, (D, 1))
+
+    yMatrix = xMatrix * alphaMatrix
+    return yMatrix.flatten()
