@@ -10,10 +10,10 @@ def ks_loop(x, alpha, D):
     size_y = M * D
 
     y = np.zeros((size_y, 1)) # Initialization for y vector
-    for i in range(M):
+    for i in range(M): # at this time y[n - something] = 0 so y[n] = x[n]
         y[i] = x[i]
 
-    for i in range(M + 1, size_y):
-        y[i] = float(alpha * y[index - M])
+    for i in range(M + 1, size_y): # at this interval, x[n] = 0 
+        y[i] = float(alpha * y[index - M]) # so y[n] = alpha y[n - M]
 
     return y
