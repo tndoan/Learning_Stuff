@@ -6,7 +6,14 @@ def ks_loop(x, alpha, D):
     """
     M = np.size(x)
 
-    result = list() # it is equal to y in introduction
+    y = list()
     size_y = M * D
 
-    return result
+    y = np.zeros((size_y, 1)) # Initialization for y vector
+    for i in range(M):
+        y[i] = x[i]
+
+    for i in range(M + 1, size_y):
+        y[i] = float(alpha * y[index - M])
+
+    return y
