@@ -8,7 +8,7 @@ function rand_multi_normal(number, mean, stdev)
     if ndims(stdev) != 2 # check the dimension of covariance matrix
         error("size of covariance matrix must be 2")
     end
-    if size(stdev, 1) == size(stdev, 2) == N
+    if !(size(stdev, 1) == size(stdev, 2) == N)
         # check the size of co-var matrix and mean vector
         error("size of inputs is inconsistant")
     end
