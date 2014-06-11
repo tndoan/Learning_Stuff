@@ -1,7 +1,7 @@
 Generate random number by using Julia
 ===
 #rand_mul_normal.jl
-It is similar to function ``mvnrnd`` in [MATLAB](http://www.mathworks.com/help/stats/mvnrnd.html). The implementation is followed the intruction from [Wikipeida](http://en.wikipedia.org/wiki/Multivariate_normal_distribution#Drawing_values_from_the_distribution).
+It is similar to function ``mvnrnd`` in [MATLAB](http://www.mathworks.com/help/stats/mvnrnd.html). The implementation is followed the instruction from [Wikipeida](http://en.wikipedia.org/wiki/Multivariate_normal_distribution#Drawing_values_from_the_distribution).
 
 Sample code to generate random value
 
@@ -18,7 +18,7 @@ julia> result = rand_multi_normal(10000, [2; 3], [1 1.5; 1.5 3])
 
 #rand_GMM.jl
 
-It is try to generate the random value from Gaussian mixture models. The implementation is followed the intruction from [MATLAB forums](http://www.mathworks.com/matlabcentral/newsreader/view_thread/36174)
+It is try to generate the random value from Gaussian mixture models. The implementation is followed the instruction from [MATLAB forums](http://www.mathworks.com/matlabcentral/newsreader/view_thread/36174)
 
 Sample code to generate the random value:
 
@@ -29,3 +29,5 @@ mu = [-5 -5; 0 0; 5 5];
 sigma = cat(3, [2 0; 0 1], [2 -.2; -.2 2], [1 .9; .9 1]);
 y = rand_GMM(100000, mu, sigma, [1 1 1]);
 ```
+
+Check the source code to investigate more about the implementation.
