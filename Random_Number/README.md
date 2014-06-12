@@ -18,7 +18,7 @@ julia> result = rand_multi_normal(10000, [2; 3], [1 1.5; 1.5 3])
 
 #rand_GMM.jl
 
-It is try to generate the random value from Gaussian mixture models. The implementation is followed the instruction from [MATLAB forums](http://www.mathworks.com/matlabcentral/newsreader/view_thread/36174)
+It tries to generate the random value from Gaussian mixture models. The implementation is followed the instruction from [MATLAB forums](http://www.mathworks.com/matlabcentral/newsreader/view_thread/36174)
 
 Sample code to generate the random value:
 
