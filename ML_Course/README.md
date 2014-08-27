@@ -1,0 +1,1 @@
+This is my implementation of Machine Learning course of Prof. Andrew Ng. It is not in Courera, please use [this link](http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning) to access the course.
