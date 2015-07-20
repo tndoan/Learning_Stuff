@@ -25,9 +25,8 @@ function svrg(lRate::Float64, data::Array{Float64, 2}, y::Array{Float64, 1})
             p = vec(data[i_t, :])
             f1 = takeDerivative(w_0, p, y[i_t]) 
             f2 = takeDerivative(w_tilde, p, y[i_t])
-            #println("f1:$f1 f2:$f2 w_0:$w_0")
-            w_1 = w_0 - lRate * (f1 - f2  + μ_tilde)
-            w_0 = w_1
+            #println("f1:$f1 f2:$f2 w_0:$w_0 μ_tilde:$μ_tilde")
+            w_0 = w_0 - lRate * (f1 - f2  + μ_tilde)
         end
 
         w_0_tilde = w_0
@@ -37,8 +36,8 @@ function svrg(lRate::Float64, data::Array{Float64, 2}, y::Array{Float64, 1})
         obj = sum(obj .* obj) / n
         println(obj) # print the objective function after each iteration
 
-        if abs(prev_obj - obj) / obj < 0.01 # check convergence
-            conv = true
+        if abs(prev_obj - obj) < 0.0001 # check convergence
+           conv = true
         end
 
         prev_obj = obj
