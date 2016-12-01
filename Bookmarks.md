@@ -4,6 +4,7 @@ This is the list of articles that I have read. Most of the articles are tech-rel
 - [The story of one latency spike](https://http2.cloudflare.com/the-story-of-one-latency-spike/) CloudFlare team has shared a great story of how they debugged and found the latency inside Linux kernel.
 - [A millisecond isn't fast](http://jvns.ca/blog/2015/09/10/a-millisecond-isnt-fast-and-how-we-fixed-it/) Julia Evans wrote an article to summarize her experience to make one function in Scala 100x faster.
 - [How I fixed Atom](http://davidvgalbraith.com/how-i-fixed-atom/) David writes a great article to sum up his debugging. After reading, I have known one more term [**Catastrophe strikes**](http://www.regular-expressions.info/catastrophic.html)
+- [How we caught the CCL rouge train with data](https://blog.data.gov.sg/how-we-caught-the-circle-line-rogue-train-with-data-79405c86ab6a#.45nvt66io) the authors share how they use data to find to rouge train. It is not exact debug story but still interesting to read.
 
 **Courses and Challenges**: Some links that could help us build our CS skills.
 - [CS231n: Convolutional Neural Networks for Visual Recognition](https://cs231n.github.io/) This course is from Stanford. It provides us a general view of machine learning as well as deep learning. If you have or have not had any experience with machine learning, it is still worth a try. The notes are so well written and intuitive.
@@ -22,7 +23,10 @@ This is the list of articles that I have read. Most of the articles are tech-rel
 
 **Linux**
 - [ Linux Performance Analysis in 60,000 Milliseconds ](http://techblog.netflix.com/2015/11/linux-performance-analysis-in-60s.html)
+- [Explaining X11](https://magcius.github.io/xplain/article/)
+- [BSD vs Linux](https://www.over-yonder.net/~fullermd/rants/bsd4linux/01)
 
 **Mics**
 - [The Monad Challenges](https://mightybyte.github.io/monad-challenges/)
 - [Command line murder mystery](https://github.com/veltman/clmystery)
+- [Negotiation](https://medium.freecodecamp.com/ten-rules-for-negotiating-a-job-offer-ee17cccbdab6#.4f6divb6g)
